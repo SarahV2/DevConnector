@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server":"nodemon server"
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SarahA45/DevConnectorProject#readme",
   "dependencies": {
     "bcrypt": "^3.0.8",
+    "bcryptjs": "^2.4.3",
     "concurrently": "^5.1.0",
     "config": "^3.2.5",
     "express": "^4.17.1",
