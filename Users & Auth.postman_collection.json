@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f8d9913b-55fa-4978-a9f8-5b00a77d4f93",
+		"_postman_id": "7312aab7-4e2c-4732-ba8d-bd38f7f091d1",
 		"name": "Users & Auth",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -118,45 +118,6 @@
 						"api",
 						"auth",
 						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Logged-in User's Profile",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "x-auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDNiMzEwYzk3ZWYzZjc4YzUzNjFiIn0sImlhdCI6MTU4MjEzNzk1MywiZXhwIjoxNTgyNDk3OTUzfQ.ws3AsEJ_8AsUIkzTPiSLHDt3BSmL1cS_f92kl-McmBo",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"content\": \"Updated the content\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/profile/me",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"profile",
-						"me"
 					]
 				}
 			},
