@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "0f8f8b3d-2452-4901-b1df-2826783f3fa4",
+		"name": "Profiles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create/ Update Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZGM0ZDZhNDg4NzYyZWQ0ZDc0ZTY3In0sImlhdCI6MTU4MjE1NDk2NiwiZXhwIjoxNTgyNTE0OTY2fQ.3Tt5-haZY6n7fPvlFKmXGZS4nC7powD6YvNnLv_oq1A",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company\": \"Meem's Corporation\",\n\t\"status\":\"Developer\",\n\t\"website\": \"https://www.google.com\",\n\t\"skills\":\"HTML,CSS,Ruby,JavaScript\",\n\t\"location\":\"Saudi Arabia\",\n\t\"bio\": \"I am a junior developer\",\n\t\"githubUsername\": \"SarahMA5\",\n\t\"twitter\":\"https://twitter.com\",\n\t\"youtube\":\"https://youtube.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Logged-in User's Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDNiMzEwYzk3ZWYzZjc4YzUzNjFiIn0sImlhdCI6MTU4MjEzNzk1MywiZXhwIjoxNTgyNDk3OTUzfQ.ws3AsEJ_8AsUIkzTPiSLHDt3BSmL1cS_f92kl-McmBo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"Updated the content\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all profiles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get profile by user ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile/user/5e4d3b310c97ef3f78c5361b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"user",
+						"5e4d3b310c97ef3f78c5361b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User/Profile",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZGM0ZDZhNDg4NzYyZWQ0ZDc0ZTY3In0sImlhdCI6MTU4MjE1NDk2NiwiZXhwIjoxNTgyNTE0OTY2fQ.3Tt5-haZY6n7fPvlFKmXGZS4nC7powD6YvNnLv_oq1A",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Experience to Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDQ3YTAwNGI1ZjEzNjk0MTg2M2FjIn0sImlhdCI6MTU4MjE1NTcxMSwiZXhwIjoxNTgyNTE1NzExfQ.r6RqVL1pQo9bxkg_l8sHIx7tlk9NQmjMCoI-LeO-xbE",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Test Experience 2\",\n\t\"company\":\"Meem Corporation\",\n\t\"location\":\"test2\",\n\t\"from\":\"8-10-2010\",\n\t\"current\":true,\n\t\"description\":\"Courses on web development\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/experience",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete experience from profile",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDQ3YTAwNGI1ZjEzNjk0MTg2M2FjIn0sImlhdCI6MTU4MjE3NDc4NiwiZXhwIjoxNTgyNTM0Nzg2fQ.7Fm9VNsAfox5dUIVRgeQPwsX52ECOHV4DQvt_zWgLnw",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile/experience/5e4dcbc81fcc8917a81dc7dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"experience",
+						"5e4dcbc81fcc8917a81dc7dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Education to Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDQ3YTAwNGI1ZjEzNjk0MTg2M2FjIn0sImlhdCI6MTU4MjE4NjcxNCwiZXhwIjoxNTgyNTQ2NzE0fQ.j9hJED5A8fUhOeZiPW0uR-f7MnIWqc77A-rRFuMIClM",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"school\":\"Test\",\n\t\"degree\":\"To delete\",\n\t\"fieldOfStudy\":\"Computer Science\",\n\t\"from\":\"10-10-2012\",\n\t\"to\":\"10-12-2018\",\n\t\"description\":\"Bachelor degree in Computer Science\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/profile/education",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"education"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Education",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU0ZDQ3YTAwNGI1ZjEzNjk0MTg2M2FjIn0sImlhdCI6MTU4MjE4NjcxNCwiZXhwIjoxNTgyNTQ2NzE0fQ.j9hJED5A8fUhOeZiPW0uR-f7MnIWqc77A-rRFuMIClM",
+						"description": "Sarah's token",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile/education/5e4e419297cd6f478022f90b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"education",
+						"5e4e419297cd6f478022f90b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Github repos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "content type",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/profile/github/SarahA45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"profile",
+						"github",
+						"SarahA45"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
