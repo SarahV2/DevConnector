@@ -1,35 +1,36 @@
-import {GET_PROFILE,PROFILE_ERROR, CLEAR_PROFILE} from '../actions/types'
+import { GET_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, UPDATE_PROFILE } from '../actions/types'
 
 
-const initialState={
+const initialState = {
     profile: null, //when logged in, it should get the user's profile.
     profiles: [],
     repos: [],
     loading: true,
-    error:{}
+    error: {}
 }
 
-export default function (state=initialState,action){
-    const {type, payload}=action;
+export default function (state = initialState, action) {
+    const { type, payload } = action;
 
-    switch(type){
+    switch (type) {
         case GET_PROFILE:
-            return{
+        case UPDATE_PROFILE:
+            return {
                 ...state,
-                profile:payload,
+                profile: payload,
                 loading: false
             }
         case PROFILE_ERROR:
-            return{
+            return {
                 ...state,
                 error: payload,
                 loading: false
             }
         case CLEAR_PROFILE:
-            return{
+            return {
                 ...state,
-                profile:null,
-                repos:[],
+                profile: null,
+                repos: [],
                 loading: false
             }
         default:
