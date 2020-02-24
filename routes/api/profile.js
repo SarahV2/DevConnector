@@ -35,7 +35,7 @@ router.post('/', [auth,[
     check('skills','Skills are required').not().isEmpty()
 ]], async (req,res)=>{
     const errors=validationResult(req);
-    if(!errors.isEmpty){ //if there're errors
+    if(!errors.isEmpty()){ //if there're errors
     return res.status(400).json({errors: errors.array()})
     }
 
