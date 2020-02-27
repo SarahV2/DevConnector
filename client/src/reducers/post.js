@@ -1,4 +1,4 @@
-import {GET_POSTS,GET_POST,POST_ERROR,UPDATE_LIKES,DELETE_POST,ADD_POST} from '../actions/types'
+import {GET_POSTS,GET_POST, ADD_COMMENT, REMOVE_COMMENT, POST_ERROR,UPDATE_LIKES,DELETE_POST,ADD_POST} from '../actions/types'
 const initialState={
     posts:[],
     post: null,
@@ -47,6 +47,19 @@ export default function(state=initialState,action){
                     posts: state.posts.map(post => post._id === payload.postID ? { ...post, likes: payload.likes } : post),
                     loading:false,
                 //looping throught the posts if the id matches update the likes of that post, otherwise just return the post as it is.
+                }
+            case ADD_COMMENT:
+            return{
+                ...state,
+                post:{...state.post,comments:payload},
+                loading: false
+            }
+            case REMOVE_COMMENT:
+                return{
+                    ...state,
+                    post:{...state.post,
+                    comments: state.post.comments.filter(comment=>comment._id!==payload)},
+                    loading:false
                 }
             default:
                 return state
