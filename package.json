@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/SarahA45/DevConnectorProject#readme",
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.1.0",
     "config": "^3.2.5",
